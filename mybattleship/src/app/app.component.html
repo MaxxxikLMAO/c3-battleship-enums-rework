@@ -1,0 +1,13 @@
+<!--<div *ngFor="let karty of karticky" class="btn btn-danger" role="alert" (click)="turningCards(karty)">
+  <span *ngIf="karty">{{karty}}</span>
+</div>-->
+
+<div *ngFor="let row of gameState.getGrid()">
+  <button style="width: 130px; height: 90px;" *ngFor="let state of row" (click)="gameState.reveal(state)">
+
+    <span *ngIf="state.getTileState() == ship">*ship*</span>
+    <span *ngIf="state.getTileState() == water">*water*</span>
+  </button>
+</div>
+
+
